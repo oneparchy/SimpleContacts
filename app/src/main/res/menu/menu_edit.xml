@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/miDelete"
+        android:title="@string/menu_delete"
+        android:icon="@drawable/ic_baseline_delete_24"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/miDiscard"
+        android:title="@string/menu_discard"
+        android:icon="@drawable/ic_baseline_arrow_back_24"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/miSave"
+        android:title="@string/menu_save"
+        android:icon="@drawable/ic_baseline_save_24"
+        app:showAsAction="always"/>
+
+</menu>

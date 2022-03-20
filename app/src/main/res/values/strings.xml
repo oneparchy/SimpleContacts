@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SimpleContacts</string>
+    <string name="login_button_text">Login</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_add">Add</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_discard">Discard</string>
+    <string name="menu_delete">Delete</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="hint_name">Enter name</string>
+    <string name="contact_gender">Gender</string>
+    <string name="hint_gender">Enter Gender</string>
+    <string name="contact_phone1">xxx-xxx-xxxx</string>
+    <string name="hint_phone1">Enter primary phone #</string>
+    <string name="contact_phone2">yyy-yyy-yyyy</string>
+    <string name="hint_phone2">Enter alternate phone #</string>
+    <string name="contact_email">john.doe@example.com</string>
+    <string name="hint_email">Enter e-mail address</string>
+    <string name="contact_address">123 Sesame Street, New York NY 10023</string>
+    <string name="hint_address">Enter address</string>
+</resources>

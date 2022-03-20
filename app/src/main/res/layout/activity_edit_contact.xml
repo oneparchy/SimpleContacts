@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditContactActivity"
+    android:windowSoftInputMode="adjustResize" >
+
+    <ImageView
+        android:id="@+id/ivPerson"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_margin="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_person_24" />
+
+    <ImageView
+        android:id="@+id/ivPhone1"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_margin="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPerson"
+        app:srcCompat="@drawable/ic_baseline_local_phone_24" />
+
+    <ImageView
+        android:id="@+id/ivPhone"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_margin="5dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPhone1"
+        app:srcCompat="@drawable/ic_baseline_local_phone_24" />
+
+    <ImageView
+        android:id="@+id/ivEmail"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_margin="5dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPhone"
+        app:srcCompat="@drawable/ic_baseline_mail_24" />
+
+    <ImageView
+        android:id="@+id/ivEmail2"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_margin="5dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivEmail"
+        app:srcCompat="@drawable/ic_baseline_house_24" />
+
+    <ImageView
+        android:id="@+id/ivEmail3"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_margin="5dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivEmail2"
+        app:srcCompat="@drawable/ic_baseline_face_retouching_off_24" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_name"
+        android:inputType="textPersonName"
+        android:maxLines="3"
+        android:paddingStart="10dp"
+        app:flow_horizontalBias="0.0"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPerson"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ivPerson"
+        app:layout_constraintTop_toTopOf="@+id/ivPerson" />
+
+    <EditText
+        android:id="@+id/etPhone1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_phone1"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:paddingStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPhone1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ivPhone1"
+        app:layout_constraintTop_toTopOf="@+id/ivPhone1" />
+
+    <EditText
+        android:id="@+id/etPhone2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_phone2"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:paddingStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ivPhone"
+        app:layout_constraintTop_toTopOf="@+id/ivPhone" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
+        android:maxLines="2"
+        android:paddingStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ivEmail"
+        app:layout_constraintTop_toTopOf="@+id/ivEmail" />
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_address"
+        android:inputType="textPostalAddress"
+        android:maxLines="2"
+        android:paddingStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivEmail2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ivEmail2"
+        app:layout_constraintTop_toTopOf="@+id/ivEmail2" />
+
+    <EditText
+        android:id="@+id/etGender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_gender"
+        android:inputType="text"
+        android:maxLines="2"
+        android:paddingStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivEmail3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ivEmail3"
+        app:layout_constraintTop_toTopOf="@+id/ivEmail3" />
+</androidx.constraintlayout.widget.ConstraintLayout>
