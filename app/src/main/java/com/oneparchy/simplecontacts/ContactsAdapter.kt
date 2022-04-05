@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
@@ -59,11 +58,11 @@ class ContactsAdapter(private val context: Context, options: FirestoreRecyclerOp
 
     inner class ContactViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnLongClickListener {
         //grab views in layout
-        val tvName: TextView = itemView.findViewById(R.id.tvName)
-        val tvPhone1: TextView = itemView.findViewById(R.id.tvPhone1)
-        val tvPhone2: TextView = itemView.findViewById(R.id.tvPhone2)
-        val tvEmail: TextView = itemView.findViewById(R.id.tvEmail)
-        val tvAddress: TextView = itemView.findViewById(R.id.tvAddress)
+        private val tvName: TextView = itemView.findViewById(R.id.tvName)
+        private val tvPhone1: TextView = itemView.findViewById(R.id.tvPhone1)
+        private val tvPhone2: TextView = itemView.findViewById(R.id.tvPhone2)
+        private val tvEmail: TextView = itemView.findViewById(R.id.tvEmail)
+        private val tvAddress: TextView = itemView.findViewById(R.id.tvAddress)
         val tvGender: TextView = itemView.findViewById(R.id.tvGender)
         val phoneIcon1: ImageView = itemView.findViewById(R.id.phoneicon)
         val phoneIcon2: ImageView = itemView.findViewById(R.id.phoneicon2)
@@ -85,7 +84,7 @@ class ContactsAdapter(private val context: Context, options: FirestoreRecyclerOp
             tvGender.text = model.gender
         }
 
-        //what happens when user long clicks
+        //On long click - pass document reference (contact ID) to EditContactActivity for editing
         override fun onLongClick(p0: View?): Boolean {
             val docId = snapshots.getSnapshot(position).id
             //Toast.makeText(context, docId,Toast.LENGTH_SHORT).show()

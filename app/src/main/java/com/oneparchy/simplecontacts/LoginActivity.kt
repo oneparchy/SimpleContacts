@@ -25,16 +25,21 @@ class LoginActivity : AppCompatActivity() {
         private const val TAG = "LoginActivity"
         private const val RC_GOOGLE_SIGN_IN = 3450
     }
+
+    //declare view elements
     private lateinit var btnLogin: SignInButton
+    private lateinit var sbView: CoordinatorLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        auth = Firebase.auth            // Initialize Firebase Auth
+        //init Firebase Auth
+        auth = Firebase.auth
 
         //bind variables to view elements
         btnLogin = findViewById(R.id.btnLogin)
+        sbView = findViewById(R.id.clLoginActivity)
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -49,15 +54,15 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    // Check if user is signed in (non-null) and update UI accordingly
     override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         updateUI(currentUser)
     }
 
+    //Navigate to MainActivity if user login success
     private fun updateUI(user: FirebaseUser?) {
-        //Navigate to MainActivity if user login success
         if (user==null) {
             Log.w(TAG, "User is null, navigation cancelled")
             return
@@ -66,6 +71,7 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
+    //This method runs when the Google signIn intent completes
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -78,12 +84,14 @@ class LoginActivity : AppCompatActivity() {
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
-                // Google Sign In failed, update UI appropriately
+                // Google Sign In failed, let user know
                 Log.w(TAG, "Google sign in failed", e)
+                Snackbar.make(sbView, "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
             }
         }
     }
 
+    //Authenticate to firebase with Google token
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential)
@@ -96,7 +104,6 @@ class LoginActivity : AppCompatActivity() {
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
-                    val sbView = findViewById(R.id.clLoginActivity) as CoordinatorLayout
                     Snackbar.make(sbView, "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
                     updateUI(null)
                 }
