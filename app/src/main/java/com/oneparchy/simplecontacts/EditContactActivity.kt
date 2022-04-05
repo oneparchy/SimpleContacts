@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -19,7 +20,7 @@ import com.oneparchy.simplecontacts.models.Contact
 class EditContactActivity : AppCompatActivity() {
     private companion object {
         private const val TAG="EditContactActivity"
-        private val currentUser = auth.currentUser!!
+        private val currentUser = Firebase.auth.currentUser!!
     }
 
     //declare layout views

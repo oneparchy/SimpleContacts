@@ -17,8 +17,6 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-lateinit var auth: FirebaseAuth
-
 class LoginActivity : AppCompatActivity() {
 
     private companion object {
@@ -29,6 +27,8 @@ class LoginActivity : AppCompatActivity() {
     //declare view elements
     private lateinit var btnLogin: SignInButton
     private lateinit var sbView: CoordinatorLayout
+    //declare Firebase Auth to use
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
